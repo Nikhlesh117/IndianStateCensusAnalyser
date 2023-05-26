@@ -45,5 +45,22 @@ namespace TestStateCensusAnalyser
                 throw;
             }
         }
+        public void LoadDataFromCSV_ShouldThrowException_WhenHeaderIsIncorrect()
+        {
+            // Arrange
+            string filePath = "D:\\c#\\257\\IndianStatesCensusAnalyserProblem\\IndianStatesCensusAnalyserProblem\\StateCensus.csv";
+            StateCensusAnalyser analyser = new StateCensusAnalyser(filePath);
+
+            // Act and Assert
+            try
+            {
+                analyser.LoadDataFromCSV();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Caught exception: " + ex.Message);
+                throw;
+            }
+        }
     }
 }
